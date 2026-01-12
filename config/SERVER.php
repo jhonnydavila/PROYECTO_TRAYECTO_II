@@ -8,6 +8,6 @@
     const SGBD = "mysql:host=".SERVER.";dbname=".DB;
 
     const METHOD = "AES-256-CBC";
-    const SECRET_KEY = '$PROYECTO_TRAYECTO_II@2025';
+    const SECRET_KEY = '$PROYECTO_TRAYECTO_2@2025';
     const SECRET_IV = '012345';
     //-------------------------------------------------------------
