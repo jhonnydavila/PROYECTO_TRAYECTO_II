@@ -17,6 +17,9 @@
                 session_start(['name'=>'SCI']);
                 $pagina = explode("/", $_GET['views']);
 
+                require_once "../app/controllers/loginControlador.php";
+                $lc = new loginControlador();
+
                 if(!isset($_SESSION['usuario']) || !isset($_SESSION['id']) || !isset($_SESSION['nombre'])){
                     echo $lc->forzar_cierre_sesion_controlador();
                     exit();
