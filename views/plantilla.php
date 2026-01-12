@@ -10,7 +10,6 @@
             include "../views/include/navbar.php";
         ?>
         <main>
-
         </main>
     </body>
 </html>

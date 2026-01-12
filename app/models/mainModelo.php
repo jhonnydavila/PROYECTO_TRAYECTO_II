@@ -3,7 +3,7 @@
 
     class mainModelo{
         // Función para conectar a BD 
-        protected static function conectar(){
+        protected static function conexion(){
             $conexion = new PDO(SGBD,USER,PASS);
             $conexion->exec("SET CHARACTER SET utf8");
             return $conexion;
@@ -11,7 +11,7 @@
 
         // Función para ejecutar consultas simples
         protected static function ejecutar_consulta_simple($consulta){
-            $sql = self:: conectar()->prepare($consulta);
+            $sql = self:: conexion()->prepare($consulta);
             $sql->execute();
             return $sql;
         }
