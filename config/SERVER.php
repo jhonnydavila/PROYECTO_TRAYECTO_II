@@ -1,7 +1,7 @@
 <?php
 	//--------------------Base de Datos---------------------------
     const SERVER = "localhost";
-    const DB = "PROYECTO_TRAYECTO_II";
+    const DB = "proyecto_trayecto_ii";
     const USER = "root";
     const PASS = "";
 
