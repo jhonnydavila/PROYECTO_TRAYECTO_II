@@ -9,7 +9,7 @@
 
 <div class="container-fluid align-items-center" style="height: 100dvh; background-image: url('<?php echo APP_URL ?>public/img/login_gradient.jpg'); background-size: cover; background-position: center;">
     <div class="row h-100 align-items-center">
-        <div class="col-md-4 col-sm-6 mx-auto shadow bg-light p-0">
+        <div class="col-lg-4 col-md-7 col-sm-8 mx-auto shadow bg-light p-0">
 
             <div class="col-12">
                 <img src="<?php echo APP_URL ?>public/img/login_image.jpg" class="img-fluid" alt="" style="width: 100%; max-height: 40vh; object-fit: cover;">
@@ -32,7 +32,7 @@
                     </div>
                 <?php } ?>
                 </div>
-                
+
                 <div class="col-12 px-3">
                     <input type="text" class="form-control py-2" placeholder="Usuario" name="login_usuario" maxlength="20" required>
                 </div>
