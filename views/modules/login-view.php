@@ -1,18 +1,18 @@
 <?php
     // Procesar el login si se envía el formulario
     if (isset($_POST['login_usuario']) && isset($_POST['login_clave'])) {
-        require_once "../app/controllers/loginControlador.php";
+        require_once "./app/controllers/loginControlador.php";
         $instancia_login = new loginControlador();
         $instancia_login->iniciar_sesion_controlador();
     }
 ?>
 
-<div class="container-fluid align-items-center" style="height: 100dvh; background-image: url('<?php echo APP_URL ?>public/img/login_gradient.jpg'); background-size: cover; background-position: center;">
+<div class="container-fluid align-items-center" style="height: 100dvh; background-image: url('assets/img/login_gradient.jpg'); background-size: cover; background-position: center;">
     <div class="row h-100 align-items-center">
         <div class="col-lg-4 col-md-7 col-sm-8 mx-auto shadow bg-light p-0">
 
             <div class="col-12">
-                <img src="<?php echo APP_URL ?>public/img/login_image.jpg" class="img-fluid" alt="" style="width: 100%; max-height: 40vh; object-fit: cover;">
+                <img src="assets/img/login_image.jpg" class="img-fluid" alt="" style="width: 100%; max-height: 40vh; object-fit: cover;">
             </div>
 
             <form class="row g-2 p-4 text-center" action="" method="post" autocomplete="off">

@@ -1,5 +1,5 @@
 <?php
-    require_once "../config/SERVER.php";
+    require_once "./config/SERVER.php";
 
     class mainModelo{
         // Función para conectar a BD 

@@ -1,5 +1,5 @@
 <?php
-    require_once "./../app/models/loginModelo.php";
+    require_once "./app/models/loginModelo.php";
 
     class loginControlador extends loginModelo{
 
