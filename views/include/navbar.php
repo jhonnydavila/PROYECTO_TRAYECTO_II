@@ -1,10 +1,12 @@
 
 <div class="navbar__sidebar" id="sidebar">
-    <div class="p-3 navbar__sidebar-link-menu-btn gap-2">
-        <img class="navbar__sidebar-icon" id="btn-toggle" src="<?php echo APP_URL ?>assets/svg/navbar__menu.svg">
-        <h6 class="text-uppercase text-muted m-0 sidebar-text">Menú Principal</h6>
-    </div>
-    <nav>
+    <nav class="bg-dark p-0 w-100 d-flex justify-content-center px-2">
+        <div class="navbar__sidebar-link-menu-btn">
+            <img class="navbar__sidebar-icon" id="btn-toggle" src="<?php echo APP_URL ?>assets/svg/navbar__menu.svg">
+            <h6 class="text-uppercase m-0 sidebar-text">Menú Principal</h6>
+        </div>
+    </nav>
+    <nav class="navbar__sidebar-links">
         <a href="<?php echo APP_URL ?>home/" class="navbar__sidebar-link">
             <svg class="navbar__sidebar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_iconCarrier"> 
