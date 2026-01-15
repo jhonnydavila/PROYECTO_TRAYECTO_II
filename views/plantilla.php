@@ -24,9 +24,9 @@
                     echo $lc->forzar_cierre_sesion_controlador();
                     exit();
                 }
-                include "./views/include/navbar.php";
+                include "views/include/navbar.php";
         ?>
-        <main>
+        <main class="main-content">
             <?php  
                 include $vistas;
                 ?>

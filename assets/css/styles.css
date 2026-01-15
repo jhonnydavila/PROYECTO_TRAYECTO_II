@@ -1,0 +1,98 @@
+:root {
+    --sidebar-ancho: 14rem;
+    --sidebar-ancho-mini: 3.8rem; /* ancho cuando esté encogido el menu */
+    --topbar-alto: 3rem;
+    --color-fondo: #f8f8f8;
+    --color-fondo-borde: #dddddd;
+    --color-primario: #262636;
+    --color-secundario: #240042;
+    --color-complementario: #3c006d;
+}
+
+body {
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+    padding-left: var(--sidebar-ancho);
+    transition: padding-left 0.3s ease; /* Animación suave */
+}
+/* Estado colapsado para el body */
+body.collapsed {
+    padding-left: var(--sidebar-ancho-mini);
+}
+body.collapsed .navbar__sidebar {
+    width: var(--sidebar-ancho-mini);
+}
+/* Ocultar texto cuando esté colapsado */
+body.collapsed .sidebar-text {
+    display: none;
+}
+
+
+/* BARRA SUPERIOR */
+.navbar__topbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 2rem;
+    height: var(--topbar-alto);
+    width: calc(100% - var(--sidebar-ancho)); 
+    background-color: var(--color-fondo);
+    border-bottom: 1px solid var(--color-fondo-borde);
+    display: flex;
+    justify-content: space-between; /* Para que el botón y "Cerrar sesión" se separen */
+    align-items: center;
+    transition: width 0.3s ease;
+}
+
+body.collapsed .navbar__topbar {
+    width: calc(100% - var(--sidebar-ancho-mini));
+}
+
+
+
+/* BARRA LATERAL */
+.navbar__sidebar {
+    width: var(--sidebar-ancho);
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1100;
+    background-color: var(--color-fondo);
+    border-right: 1px solid var(--color-fondo-borde);
+    transition: width 0.1s ease-in-out;
+    overflow: hidden;
+}
+.navbar__sidebar-link, .navbar__sidebar-link-menu-btn {
+    color: var(--color-primario);
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    display: flex;
+    white-space: nowrap; /* Evita que el texto salte de línea antes de ocultarse */
+    align-items: center;
+    gap: 12px;
+}
+.navbar__sidebar-icon{
+    width: 1.7rem;
+    cursor: pointer;
+}
+.navbar__sidebar-link:hover {
+    background: var(--color-primario);
+    color: var(--color-fondo);
+}
+
+
+.main-content {
+    padding: 2rem;
+    padding-top: 4rem;
+}
+@media (max-width: 768px) {
+    body { padding-left: 0; }
+    .navbar__sidebar { display: none; } 
+    .navbar__topbar { width: 100%; } 
+}

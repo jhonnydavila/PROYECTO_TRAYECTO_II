@@ -2,11 +2,11 @@
     class vistasModelo{
 
         protected static function obtener_vistas_modelo($vistas){
-            $listaBlanca = ["home"];
+            $listaBlanca = ["home","usuario"];
 
             if(in_array($vistas, $listaBlanca)){
-                if(is_file("./views/modules/".$vistas."-view.php")){
-                    $contenido = "./views/modules/".$vistas."-view.php";
+                if(is_file("views/modules/".$vistas."-view.php")){
+                    $contenido = "views/modules/".$vistas."-view.php";
                 }else{
                     $contenido = "404";
                 }

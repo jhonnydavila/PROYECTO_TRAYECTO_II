@@ -14,14 +14,14 @@
             // Validación de campos
             if($usuario=="" || $clave==""){
                 $_SESSION['login_alerta'] = "No has llenado todos los campos obligatorios.";
-                header("Location: ".APP_URL."login/");
+                header("Location: ".APP_URL);
                 exit();
             }
 
             // Verificacion de integridad
             if (mainModelo::validacion_datos("[a-zA-Z0-9\.\@\-\_]{4,20}",$usuario)) {
                 $_SESSION['login_alerta'] = "El Usuario no cumple con el formato solicitado.";
-                header("Location: ".APP_URL."login/");
+                header("Location: ".APP_URL);
                 exit();
             }
 
@@ -31,6 +31,8 @@
                 "usuario"=>$usuario,
                 "clave"=>$clave_encriptada
             ];
+            
+            // Desencriptar la clave solo si el usuario es admin para la verificación
 			if($datos_login['usuario'] == "admin"){
 				$clave_encriptada = mainModelo::decryption($datos_login['clave']);
 			}
@@ -51,12 +53,13 @@
                     return header("Location: ".APP_URL."home/");
                 }else{
                     $_SESSION['login_alerta'] = "La Contraseña ingresada es incorrecta.";
+                    header("Location: ".APP_URL);
                 }
             }else{
                 $_SESSION['login_alerta'] = "No se encontró el usuario en el sistema.";
+                header("Location: ".APP_URL);
             }
 
-            header("Location: ".APP_URL."login/");
             exit();
         }
 
