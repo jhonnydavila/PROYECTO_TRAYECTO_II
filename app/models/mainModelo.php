@@ -1,7 +1,12 @@
 <?php
-    require_once "./config/SERVER.php";
+    if($peticion){
+        require_once "../config/SERVER.php";
+    }else{
+        require_once "./config/SERVER.php";
+    }
 
     class mainModelo{
+        
         // Función para conectar a BD 
         protected static function conexion(){
             $conexion = new PDO(SGBD,USER,PASS);
@@ -72,5 +77,66 @@
             }else{
                 return true;
             }
+        }
+
+        // Función para las paginaciones de las tablas de datos
+        protected static function paginador_tablas($pagina, $Npaginas,$url,$botones){
+            $list='
+                <nav class="paginacion">
+            ';
+
+            if ($pagina <= 1) {
+                $list.='
+                    <a class="pagina-link deshabilitado" aria-label="anterior">
+                        <span aria-hidden="true">< Anterior</span>
+                    </a>
+                ';
+            }else {
+                $list.='
+                    <a class="pagina-link" aria-label="anterior" href="'.$url.($pagina-1).'">
+                        <span aria-hidden="true">< Anterior</span>
+                    </a>
+                ';
+            }
+
+            $contadorI = 0;
+            for ($i = 1; $i <= $Npaginas; $i++) {
+                if ($contadorI >= $botones) {
+                    break;
+                }
+                if ($pagina == $i) {
+                    $list.='
+                        <li class="pagina-item activado">
+                            <a class="pagina-link" href="'.$url.$i.'">'.$i.'</a>
+                        </li>
+                    ';
+                }else {
+                    $list.='
+                        <li class="pagina-item">
+                            <a class="pagina-link" href="'.$url.$i.'">'.$i.'</a>
+                        </li>
+                    ';
+                }
+                $contadorI++;
+            }
+
+            if ($pagina == $Npaginas) {
+                $list.='
+                    <a class="pagina-link deshabilitado" aria-label="siguiente">
+                        <span aria-hidden="true">Siguiente ></span>
+                    </a>
+                ';
+            }else {
+                $list.='
+                    <a class="pagina-link" href="'.$url.($pagina+1).'" aria-label="siguiente">
+                        <span aria-hidden="true">Siguiente ></span>
+                    </a>
+                ';
+            }
+
+            $list.='
+                </nav>
+            ';
+            return $list;
         }
     }

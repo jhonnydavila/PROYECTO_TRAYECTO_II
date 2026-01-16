@@ -1,12 +1,19 @@
+*, *::before, *::after {
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none !important;
+    box-sizing: border-box;
+}
 :root {
     --sidebar-ancho: 14rem;
-    --sidebar-ancho-mini: 4.3rem; /* ancho cuando esté encogido el menu */
+    --sidebar-ancho-mini: 4.2rem; /* ancho cuando esté encogido el menu */
     --topbar-alto: 3rem;
     --color-fondo: #fdfdfd;
-    --color-fondo-borde: #e0e0e0;
-    --color-primario: #0c0c20;
-    --color-secundario: #240042;
-    --color-complementario: #3c006d;
+    --color-fondo-2: #dbdbdb;
+    --color-fondo-2-hover: #f7f7f7;
+    --color-fondo-borde: #dddddd;
+    --color-primario: #00c298;
+    --color-oscuro: #0c0c27;
 }
 
 body {
@@ -34,8 +41,8 @@ body.collapsed .sidebar-text {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1000;
-    padding: 0 2rem;
+    z-index: 800;
+    padding: 0 1.5rem;
     height: var(--topbar-alto);
     width: calc(100% - var(--sidebar-ancho)); 
     background-color: var(--color-fondo);
@@ -44,6 +51,16 @@ body.collapsed .sidebar-text {
     justify-content: space-between; /* Para que el botón y "Cerrar sesión" se separen */
     align-items: center;
     transition: width 0.3s ease;
+}
+.navbar__topbar-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+.navbar__topbar-icon{
+    width: 1rem;
+    cursor: pointer;
 }
 
 body.collapsed .navbar__topbar {
@@ -63,8 +80,8 @@ body.collapsed .navbar__topbar {
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 1100;
-    background-color: var(--color-fondo-borde);
+    z-index: 900;
+    background-color: var(--color-fondo-2);
     transition: width 0.1s ease-in-out;
     overflow: hidden;
 }
@@ -77,8 +94,8 @@ body.collapsed .navbar__topbar {
     padding: 0.7rem;
 }
 .navbar__sidebar-link, .navbar__sidebar-link-menu-btn {
-    color: var(--color-primario);
-    padding: 0.7rem;
+    color: var(--color-oscuro);
+    padding: 0.6rem;
     text-decoration: none;
     display: flex;
     white-space: nowrap; /* Evita que el texto salte de línea antes de ocultarse */
@@ -87,7 +104,10 @@ body.collapsed .navbar__topbar {
     border-radius: 4px;
     width: 100%;
     align-items: center;
-    justify-content: left;
+    justify-content: start;
+}
+.navbar__sidebar-link-menu-btn{
+    padding: 0.7rem;
 }
 .navbar__sidebar-link-menu-btn h6{
     color: #f3f3f3;
@@ -97,16 +117,93 @@ body.collapsed .navbar__topbar {
     cursor: pointer;
 }
 .navbar__sidebar-link:hover {
-    background: var(--color-fondo);
+    background: var(--color-fondo-2-hover);
+}
+
+.modulo__content-container{
+    margin: 0.9rem;
+    background-color: var(--color-fondo-2-hover);
+    padding: 0.7rem;
+    border-radius: 8px;
+}
+.modulo__content-icon{
+    width: 1.2rem;
+    color: var(--color-primario);
+}
+.modulo__content-table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent !important;
+}
+.modulo__content-table td, .modulo__content-table th{
+    background-color: transparent !important;
+    text-align: center;
+}
+.modulo__content-table-text-left{
+    padding-left: 0.2rem;
+    text-align: left !important;
+}
+
+.modulo__title-container{
+    margin: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--color-fondo-borde);
+}
+.modulo__title-icon{
+    width: 2.1rem;
+    color: var(--color-primario);
+}
+
+.main-content {
+    padding-top: var(--topbar-alto);
 }
 
 
-.main-content {
-    padding: 2rem;
-    padding-top: 4rem;
+.tabla__info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.tabla__info-list-btns {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.tabla__info-btn {
+    text-decoration: none;
+    background-color: #ebedff;
+    color: var(--color-oscuro);
+    border: 1px solid var(--color-oscuro);
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+.tabla__info-btn--activo {
+    background-color: var(--color-oscuro);
+    color: #ffffff;
+    font-weight: bold;
+}
+.paginacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+.pagina-link{
+    padding: 0.3rem 0.8rem;
+    color: var(--color-oscuro);
+}
+.deshabilitado{
+    cursor: not-allowed;
+    color: #959595;
+}
+.activado .pagina-link{
+    color: #efefef;
+    background-color: var(--color-oscuro);
 }
 @media (max-width: 768px) {
     body { padding-left: 0; }
-    .navbar__sidebar { display: none; } 
     .navbar__topbar { width: 100%; } 
 }

@@ -2,7 +2,7 @@
     class vistasModelo{
 
         protected static function obtener_vistas_modelo($vistas){
-            $listaBlanca = ["home","usuario"];
+            $listaBlanca = ["home","usuarios"];
 
             if(in_array($vistas, $listaBlanca)){
                 if(is_file("views/modules/".$vistas."-view.php")){

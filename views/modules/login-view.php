@@ -6,7 +6,11 @@
         $instancia_login->iniciar_sesion_controlador();
     }
 ?>
-
+<style>
+    body {
+        padding-left: 0 !important;
+    }
+</style>
 <div class="container-fluid align-items-center" style="height: 100dvh; background-image: url('assets/img/login_gradient.jpg'); background-size: cover; background-position: center;">
     <div class="row h-100 align-items-center">
         <div class="col-lg-4 col-md-7 col-sm-8 mx-auto shadow bg-light p-0">

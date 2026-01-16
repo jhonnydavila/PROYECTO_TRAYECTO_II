@@ -14,6 +14,7 @@
             if($vistas == "login" || $vistas == "404"){
                 require_once "./views/modules/".$vistas."-view.php";
             }else {
+                $peticion = false;
                 session_start(['name'=>'SCI']);
                 $pagina = explode("/", $_GET['views']);
 
@@ -29,7 +30,7 @@
         <main class="main-content">
             <?php  
                 include $vistas;
-                ?>
+            ?>
         </main>
     </body>
 </html>

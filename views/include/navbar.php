@@ -22,7 +22,7 @@
             <span class="sidebar-text">Dashboard</span>
         </a>
 
-        <a href="<?php echo APP_URL ?>usuario/" class="navbar__sidebar-link">
+        <a href="<?php echo APP_URL ?>usuarios/" class="navbar__sidebar-link">
             <svg class="navbar__sidebar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_iconCarrier">
                     <circle cx="12" cy="6" r="4" fill="currentColor"></circle>
@@ -44,8 +44,20 @@
 </div>
 
 <header class="navbar__topbar">
+    <h5 class="m-0">Sistema Web</h5>
     <div class="d-flex align-items-center gap-3">
-        <button class="btn btn-outline-danger btn-sm">Cerrar Sesión</button>
+        <a href="#" class="navbar__topbar-btn btn btn-outline-danger btn-sm">
+            Salir
+            <svg class="navbar__topbar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier"> 
+                    <path d="M14 7.63636L14 4.5C14 4.22386 13.7761 4 13.5 4L4.5 4C4.22386 4 4 4.22386 4 4.5L4 19.5C4 19.7761 4.22386 20 4.5 20L13.5 20C13.7761 20 14 19.7761 14 19.5L14 16.3636" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+                    <path d="M10 12L21 12M21 12L18.0004 8.5M21 12L18 15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+                </g>
+            </svg>
+        </a>
+        
     </div>
 </header>
 
